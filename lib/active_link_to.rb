@@ -125,7 +125,9 @@ module ActiveLinkTo
     if active_link_options[:disable_link] === true
       content_tag(:span, name, html_options)
     else
-      link_to(name, url, html_options)
+      content_tag(:li, html_options) do
+        link_to(name, url, html_options)
+      end
     end
   end
   
